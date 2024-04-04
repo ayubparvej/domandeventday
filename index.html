@@ -23,11 +23,38 @@
         </ul>
     </main>
 
-
-
+    <h2 id="hide-text">Text to be hidden</h2>
+    <input id="input-value" type="text" placeholder="Type delete to delete the text">
+    <button id="btn-delete" disabled>Delete</button>
 
 
     <script src="js/dom.js"></script>
+    <script>
+
+        const textValue = document.getElementById('input-value').addEventListener('keyup', function (event) {
+
+            const textInput = document.getElementById('input-value');
+            const text = event.target.value;
+
+            const btnDelete = document.getElementById("btn-delete");
+
+            if (text === 'delete' || text === 'Delete') {
+                //btnDelete.disabled = false;
+                btnDelete.removeAttribute("disabled");
+
+            } else {
+                //btnDelete.disabled = true;
+                btnDelete.setAttribute("disabled", "true");
+            }
+        })
+
+        const deleteBtn = document.getElementById('btn-delete').addEventListener('click', function () {
+            const textHide = document.getElementById('hide-text');
+            textHide.style.display = 'none';
+
+
+        })
+    </script>
 </body>
 
 </html>
