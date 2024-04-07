@@ -30,7 +30,7 @@ const textValue = document.getElementById('input-value').addEventListener('keyup
 
     } else {
         //btnDelete.disabled = true;
-        btnDelete.setAttribute("disabled", "true");
+        btnDelete.setAttribute("disabled", true);
     }
 })
 
